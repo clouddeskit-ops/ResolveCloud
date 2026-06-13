@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ResolveCloud, Enterprise-Grade IT, delivered worldwide.</title>
+<meta name="description" content="ResolveCloud delivers enterprise-grade IT for businesses worldwide. 15+ years of combined experience across managed IT, dedicated offshore IT talent and co-managed IT, and a free email security report. Enterprise IT without enterprise hiring costs." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-0:#070b16;--navy-1:#0b1020;--navy-2:#0f1730;--navy-3:#131d3b;
+    --card:#101a33;--card-2:#16213f;
+    --line:rgba(148,163,184,.16);--line-2:rgba(148,163,184,.28);
+    --text:#e8edf8;--muted:#9aa7c2;--muted-2:#6f7d9c;
+    --indigo:#6366f1;--violet:#8b5cf6;--pink:#ec4899;--amber:#f59e0b;
+    --aurora:linear-gradient(115deg,#6366f1 0%,#8b5cf6 32%,#ec4899 64%,#f59e0b 100%);
+    --aurora-soft:linear-gradient(115deg,rgba(99,102,241,.22),rgba(236,72,153,.18),rgba(245,158,11,.16));
+    --pass:#22c55e;--warn:#f59e0b;--fail:#f43f5e;--info:#60a5fa;
+    --radius:18px;--maxw:1140px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--navy-1);color:var(--text);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 50% at 18% 0%,rgba(99,102,241,.20),transparent 60%),
+      radial-gradient(55% 45% at 85% 8%,rgba(236,72,153,.16),transparent 60%),
+      radial-gradient(50% 40% at 60% 100%,rgba(245,158,11,.10),transparent 60%)}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.12;letter-spacing:-.02em;margin:0 0 .4em}
+  a{color:inherit;text-decoration:none}
+  p{margin:0 0 1rem}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;z-index:1}
+  .grad-text{background:var(--aurora);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;
+    font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#c3cbe6;
+    border:1px solid var(--line-2);background:rgba(99,102,241,.10);padding:7px 14px;border-radius:999px}
+  .muted{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;
+    font-size:.98rem;padding:13px 24px;border-radius:12px;cursor:pointer;border:1px solid transparent;
+    transition:transform .15s ease,box-shadow .2s ease,background .2s ease,border-color .2s;white-space:nowrap}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--aurora);color:#0a0e1a;box-shadow:0 10px 30px -10px rgba(236,72,153,.55)}
+  .btn-primary:hover{box-shadow:0 16px 40px -12px rgba(236,72,153,.7)}
+  .btn-ghost{background:rgba(255,255,255,.04);border-color:var(--line-2);color:var(--text)}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.07)}
+  .btn-sm{padding:10px 18px;font-size:.9rem}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(8,12,22,.72);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+  .logo .tile{width:42px;height:42px;border-radius:11px;background:var(--aurora);display:grid;place-items:center;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;color:#0a0e1a;font-size:1.05rem;box-shadow:0 6px 18px -6px rgba(139,92,246,.6)}
+  .logo .word{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.22rem;letter-spacing:-.02em}
+  .nav-links{display:flex;align-items:center;gap:4px}
+  .nav-links a{font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:500;color:var(--muted);
+    padding:9px 12px;border-radius:9px;transition:color .15s,background .15s}
+  .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+  .nav-links a.active{color:#fff;background:rgba(99,102,241,.16)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .burger{display:none;background:none;border:1px solid var(--line-2);border-radius:10px;width:44px;height:42px;cursor:pointer;color:var(--text);font-size:1.3rem;line-height:1}
+  .page{display:none;animation:fade .4s ease}
+  .page.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  section{padding:78px 0}
+  .section-sm{padding:54px 0}
+  .center{text-align:center}
+  .lead{font-size:1.12rem;color:var(--muted);max-width:680px}
+  .center .lead{margin-left:auto;margin-right:auto}
+  .hero{padding:96px 0 70px;text-align:center;position:relative}
+  .hero .halo{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:520px;height:520px;
+    background:radial-gradient(circle,rgba(139,92,246,.30),transparent 62%);filter:blur(20px);z-index:0;pointer-events:none}
+  .hero .tile-xl{width:96px;height:96px;border-radius:24px;background:var(--aurora);display:inline-grid;place-items:center;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;color:#0a0e1a;font-size:2.4rem;margin-bottom:28px;
+    box-shadow:0 18px 50px -14px rgba(236,72,153,.6);position:relative;z-index:1}
+  .hero h1{font-size:clamp(2.4rem,5.6vw,4.1rem);position:relative;z-index:1}
+  .hero .sub{font-size:1.25rem;color:var(--muted);max-width:640px;margin:18px auto 34px;position:relative;z-index:1}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+  .grid{display:grid;gap:22px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:linear-gradient(180deg,var(--card),var(--navy-2));border:1px solid var(--line);
+    border-radius:var(--radius);padding:30px;transition:transform .18s,border-color .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 20px 50px -28px rgba(99,102,241,.5)}
+  .card h3{font-size:1.32rem}
+  .ic{width:50px;height:50px;border-radius:13px;background:var(--aurora-soft);border:1px solid var(--line-2);
+    display:grid;place-items:center;margin-bottom:18px;color:#cdd5f2}
+  .ic svg{width:24px;height:24px}
+  .card-link{display:inline-flex;align-items:center;gap:7px;font-family:'Space Grotesk',sans-serif;font-weight:600;color:#c4b5fd;margin-top:6px;cursor:pointer}
+  .card-link:hover{color:#fff}
+  .sec-head{max-width:720px;margin-bottom:42px}
+  .sec-head.center{margin-left:auto;margin-right:auto}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+  ul.feat{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  ul.feat li{display:flex;gap:13px;align-items:flex-start}
+  ul.feat li .chk{flex:none;width:24px;height:24px;border-radius:7px;background:var(--aurora-soft);border:1px solid var(--line-2);display:grid;place-items:center;color:#a5b4fc;margin-top:2px}
+  ul.feat li .chk svg{width:13px;height:13px}
+  .feature-row{display:grid;grid-template-columns:46px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .feature-row:last-child{border-bottom:none}
+  .feature-row .ic{margin:0;width:46px;height:46px}
+  .feature-row h4{font-size:1.12rem;margin-bottom:5px}
+  .feature-row p{margin:0;color:var(--muted)}
+  /* ---- calculator ---- */
+  .calc{background:linear-gradient(180deg,var(--card),var(--navy-2));border:1px solid var(--line-2);border-radius:24px;padding:34px;overflow:hidden}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .calc-controls .fgc{margin-bottom:26px}
+  .calc-controls label{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;margin-bottom:10px}
+  .calc-controls select{width:100%;background:var(--navy-0);border:1px solid var(--line-2);border-radius:11px;padding:13px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:1rem;outline:none}
+  .calc-controls select:focus{border-color:var(--violet)}
+  .slider-val{font-family:'Space Grotesk',sans-serif;font-weight:700;color:#c4b5fd;font-size:1.05rem}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:999px;
+    background:linear-gradient(90deg,var(--violet),var(--pink));outline:none;margin-top:4px}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+    background:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4);border:3px solid var(--violet)}
+  input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;cursor:pointer;border:3px solid var(--violet)}
+  .seg{display:inline-flex;background:var(--navy-0);border:1px solid var(--line-2);border-radius:12px;padding:4px;gap:4px}
+  .seg button{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;border:none;background:transparent;color:var(--muted);padding:9px 16px;border-radius:9px;cursor:pointer;transition:all .15s}
+  .seg button.on{background:var(--aurora);color:#0a0e1a}
+  .calc-out{background:var(--navy-0);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column}
+  .calc-meta{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+  .calc-meta b{color:var(--text)}
+  .calc-rows{display:grid;gap:12px;margin-bottom:18px}
+  .calc-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 16px;border-radius:12px;border:1px solid var(--line)}
+  .calc-row.inhouse{background:rgba(244,63,94,.07);border-color:rgba(244,63,94,.22)}
+  .calc-row.rc{background:var(--aurora-soft);border-color:var(--line-2)}
+  .calc-row .lab{font-size:.88rem;color:var(--muted)}
+  .calc-row .lab b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:2px}
+  .calc-row .amt{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;white-space:nowrap}
+  .calc-row.inhouse .amt{color:#fda4af}
+  .calc-row.rc .amt{background:var(--aurora);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .savings{margin-top:auto;text-align:center;padding:18px;border-radius:14px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25)}
+  .savings .big{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2rem;color:#86efac;line-height:1}
+  .savings .sub{color:var(--muted);font-size:.9rem;margin-top:4px}
+  .savings.flip{background:rgba(99,102,241,.08);border-color:rgba(99,102,241,.25)}
+  .savings.flip .big{color:#c4b5fd;font-size:1.15rem}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .band{background:var(--aurora-soft);border:1px solid var(--line-2);border-radius:24px;padding:54px 40px;text-align:center;position:relative;overflow:hidden}
+  .band h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+  .band .muted{max-width:560px;margin:0 auto 26px}
+  .scan-box{max-width:680px;margin:0 auto;background:var(--card);border:1px solid var(--line-2);border-radius:18px;padding:10px;display:flex;gap:10px;flex-wrap:wrap}
+  .scan-box input{flex:1;min-width:200px;background:transparent;border:none;outline:none;color:var(--text);font-size:1.05rem;padding:14px 16px;font-family:'Inter',sans-serif}
+  .scan-box input::placeholder{color:var(--muted-2)}
+  .scan-err{color:#fda4af;font-weight:500;margin-top:14px;text-align:center}
+  .trust{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;margin-top:26px;color:var(--muted);font-size:.9rem}
+  .trust span{display:inline-flex;align-items:center;gap:8px}
+  .trust svg{width:16px;height:16px;color:#a5b4fc}
+  /* ---- platform logo marquee ---- */
+  .logos-band{padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);position:relative;z-index:1}
+  .logos-cap{text-align:center;color:var(--muted-2);font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:0 0 26px}
+  .marquee{position:relative;overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .marquee-track{display:flex;align-items:center;gap:58px;width:max-content;animation:scrollx 34s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .logo-item{display:inline-flex;align-items:center;gap:11px;flex:none;opacity:.74;filter:grayscale(.25);transition:opacity .25s,filter .25s}
+  .logo-item:hover{opacity:1;filter:none}
+  .logo-item svg{height:30px;width:auto;display:block}
+  .logo-item .lw{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.04rem;color:#dbe2f5;white-space:nowrap;letter-spacing:-.01em}
+  @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){
+    .marquee{-webkit-mask-image:none;mask-image:none}
+    .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;gap:30px 46px}
+  }
+  .free-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
+  .progress-wrap{max-width:520px;margin:40px auto;text-align:center}
+  .pulse{width:88px;height:88px;margin:0 auto 26px;border-radius:50%;border:3px solid rgba(139,92,246,.3);display:grid;place-items:center;color:#c4b5fd;animation:pulse 1.6s ease-in-out infinite;background:var(--navy-2)}
+  .pulse svg{width:34px;height:34px}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(139,92,246,.35)}50%{box-shadow:0 0 0 16px rgba(139,92,246,0)}}
+  .bar{height:10px;border-radius:999px;background:rgba(148,163,184,.18);overflow:hidden;margin-top:20px}
+  .bar > i{display:block;height:100%;width:0;background:var(--aurora);transition:width .15s linear}
+  .score-grid{display:grid;grid-template-columns:280px 1fr;gap:22px;margin-bottom:40px}
+  .score-card{border-radius:20px;padding:34px;border:1px solid var(--line-2);text-align:center;display:flex;flex-direction:column;justify-content:center}
+  .grade{font-family:'Space Grotesk',sans-serif;font-size:5rem;font-weight:700;line-height:1}
+  .sev-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:12px;font-weight:600;font-size:.92rem;border:1px solid}
+  .pill.high{background:rgba(244,63,94,.10);color:#fda4af;border-color:rgba(244,63,94,.3)}
+  .pill.med{background:rgba(245,158,11,.10);color:#fcd34d;border-color:rgba(245,158,11,.3)}
+  .pill.low{background:rgba(96,165,250,.10);color:#93c5fd;border-color:rgba(96,165,250,.3)}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:40px}
+  .plan-row{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .plan-row:last-child{border-bottom:none}
+  .badge{display:inline-block;padding:4px 11px;border-radius:8px;font-size:.74rem;font-weight:700;border:1px solid}
+  .badge.high{background:rgba(244,63,94,.12);color:#fda4af;border-color:rgba(244,63,94,.3)}
+  .badge.med{background:rgba(245,158,11,.12);color:#fcd34d;border-color:rgba(245,158,11,.3)}
+  .badge.low{background:rgba(96,165,250,.12);color:#93c5fd;border-color:rgba(96,165,250,.3)}
+  .badge.pass{background:rgba(34,197,94,.12);color:#86efac;border-color:rgba(34,197,94,.3)}
+  .badge.fail{background:rgba(244,63,94,.12);color:#fda4af;border-color:rgba(244,63,94,.3)}
+  .badge.warn{background:rgba(245,158,11,.12);color:#fcd34d;border-color:rgba(245,158,11,.3)}
+  .badge.info{background:rgba(96,165,250,.12);color:#93c5fd;border-color:rgba(96,165,250,.3)}
+  .group{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:18px;overflow:hidden}
+  .group-head{padding:20px 24px;background:rgba(255,255,255,.02)}
+  .group-head h3{margin:0;font-size:1.22rem}
+  .group-head p{margin:3px 0 0;color:var(--muted);font-size:.92rem}
+  .check{padding:22px 24px;border-top:1px solid var(--line)}
+  .check-top{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-bottom:6px}
+  .check-top h4{margin:0;font-size:1.06rem}
+  .check .plain{color:var(--muted);font-size:.95rem;margin:0 0 14px}
+  .check-detail{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .check-detail h5{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin:0 0 7px;font-family:'Space Grotesk',sans-serif}
+  .check-detail p{margin:0;font-size:.95rem}
+  .rec{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--muted);background:var(--navy-0);border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin-top:10px;word-break:break-all}
+  .kv{width:100%;border-collapse:collapse;margin-top:10px;font-size:.85rem}
+  .kv td{border:1px solid var(--line);padding:6px 10px}
+  .kv td:first-child{background:rgba(255,255,255,.03);color:var(--muted);width:42%}
+  .fix{background:var(--aurora-soft);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;font-size:.94rem;margin-top:4px}
+  .gloss{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px}
+  .form-card{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:38px}
+  .fg{margin-bottom:20px}
+  .fg label{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;margin-bottom:8px}
+  .fg .req{color:#f9a8d4}
+  .fg input[type=text],.fg input[type=email],.fg input[type=tel],.fg input[type=number],.fg select,.fg textarea{
+    width:100%;background:var(--navy-0);border:1px solid var(--line-2);border-radius:11px;padding:13px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:1rem;outline:none;transition:border-color .15s}
+  .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--violet)}
+  .fg textarea{min-height:110px;resize:vertical}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .opt{display:flex;align-items:center;gap:10px;background:var(--navy-0);border:1px solid var(--line-2);border-radius:11px;padding:12px 14px;cursor:pointer;font-size:.95rem;transition:border-color .15s,background .15s}
+  .opt input{accent-color:var(--violet);width:17px;height:17px;flex:none}
+  .opt.checked{border-color:var(--violet);background:rgba(139,92,246,.10)}
+  .form-success{display:none;text-align:center;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:18px;padding:44px 30px;max-width:620px;margin:0 auto}
+  .form-success .ic{margin:0 auto 18px;color:#86efac;background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.3)}
+  footer{border-top:1px solid var(--line);background:var(--navy-0);padding:52px 0 34px;position:relative;z-index:1}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px;margin-bottom:34px}
+  .foot-grid a{color:var(--muted);font-size:.94rem;display:block;padding:4px 0;cursor:pointer}
+  .foot-grid a:hover{color:var(--text)}
+  .foot-grid h5{font-family:'Space Grotesk',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin:0 0 12px}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:22px;color:var(--muted-2);font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media(max-width:1100px){
+    .g4{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:900px){
+    .g3{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.g4{grid-template-columns:1fr}.compare{grid-template-columns:1fr}
+    .calc-grid{grid-template-columns:1fr}
+    .score-grid{grid-template-columns:1fr}.gloss{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}
+    .nav-links{display:none;position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;background:rgba(8,12,22,.98);border-bottom:1px solid var(--line);padding:12px 22px;gap:2px}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:13px 12px}
+    .burger{display:grid;place-items:center}
+    .nav-right .btn{display:none}
+    .check-detail{grid-template-columns:1fr}
+    .plan-row{grid-template-columns:1fr}
+    .row2,.opts{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo" data-go="home" aria-label="ResolveCloud home">
+      <span class="tile">RC</span>
+      <span class="word"><b>Resolve</b><span class="grad-text">Cloud</span></span>
+    </div>
+    <nav class="nav-links" id="navlinks">
+      <a data-go="home">Home</a>
+      <a data-go="managed">Managed IT &amp; Helpdesk</a>
+      <a data-go="offshore">Offshore Talent</a>
+      <a data-go="comanaged">Co-Managed IT</a>
+      <a data-go="security">Free Email Security Check</a>
+      <a data-go="about">About</a>
+    </nav>
+    <div class="nav-right">
+      <button class="btn btn-primary btn-sm" data-go="book">Book with Team</button>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<div class="page" id="page-home">
+  <section class="hero wrap">
+    <div class="halo"></div>
+    <span class="tile-xl">RC</span>
+    <h1>Enterprise-Grade IT,<br><span class="grad-text">delivered worldwide.</span></h1>
+    <p class="sub">Enterprise-Grade IT talent without enterprise hiring costs, backed by 15+ years of combined experience.</p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" data-go="book">Book with Team</button>
+      <button class="btn btn-ghost" data-go="security">Get your free email security report</button>
+    </div>
+    <div class="trust">
+      <span>__STAR__ 15+ years combined experience</span>
+      <span>__GLOBE__ Global delivery, 24×7</span>
+      <span>__CALC__ 40–60% lower than hiring</span>
+    </div>
+  </section>
+
+
+  <!-- who we are -->
+  <section class="wrap section-sm">
+    <div class="sec-head center">
+      <span class="eyebrow">Who we are</span>
+      <h2 style="margin-top:18px">A technology partner built on experience</h2>
+      <p class="lead">ResolveCloud brings together over 15 years of combined experience in IT and technology talent. We give businesses anywhere in the world a complete IT capability, strategy, architecture, security and day-to-day operations, delivered by a skilled global team around the clock, at 40–60% less than the cost of hiring internally. We own the risk: patching, monitoring, cyber security and compliance, handled so you don't have to think about it.</p>
+    </div>
+  </section>
+
+  <!-- services -->
+  <section class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2 style="margin-top:18px">Three ways to work with us</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <div class="ic">__SVC1__</div>
+        <h3>Managed IT &amp; Helpdesk Services</h3>
+        <p class="muted">Your fully outsourced IT department: a responsive service desk your people can actually reach, plus Microsoft 365, Azure, security and backup, run end to end, so nobody loses hours waiting on IT.</p>
+        <a class="card-link" data-go="managed">Explore Managed IT &amp; Helpdesk __ARR__</a>
+      </div>
+      <div class="card">
+        <div class="ic">__SVC2__</div>
+        <h3>Offshore IT Talent</h3>
+        <p class="muted">Dedicated engineers and analysts on a simple monthly fee, who feel like part of your team.</p>
+        <a class="card-link" data-go="offshore">Explore Offshore Talent __ARR__</a>
+      </div>
+      <div class="card">
+        <div class="ic">__SVC3__</div>
+        <h3>Co-Managed IT</h3>
+        <p class="muted">We wrap around your existing IT team, overnight cover, overflow and project muscle.</p>
+        <a class="card-link" data-go="comanaged">Explore Co-Managed IT __ARR__</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- why -->
+  <section class="wrap">
+    <div class="grid g2" style="align-items:center">
+      <div>
+        <span class="eyebrow">Why ResolveCloud</span>
+        <h2 style="margin:18px 0 10px;font-size:clamp(1.8rem,3.4vw,2.6rem)">Big-IT capability, without the overhead</h2>
+        <p class="muted">Whatever your size, a handful of people or hundreds, we give you the kind of IT function usually reserved for the largest companies, without the headcount, the key-person risk or the cost.</p>
+      </div>
+      <ul class="feat">
+        <li><span class="chk">__CHK__</span><span><b>Clear contracts, global standards, transparent billing</b>, world-class delivery behind the scenes.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>Named engineers and analysts</b> who feel like part of your team, not a faceless queue.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>A standardised Microsoft 365, Azure, security and backup stack</b> for every client.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>Predictable per-user pricing</b> that beats hiring in-house.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHY IT COSTS LESS -->
+  <section class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">The cost question</span>
+      <h2 style="margin-top:18px">A full IT team, for less than building one</h2>
+      <p class="lead">Hiring in-house looks simple until you add it all up. One salary only ever buys one person, and around it sits a stack of costs that never appear on the job advert. ResolveCloud folds the whole lot into a single, predictable monthly fee, which is why most businesses spend less with us than they would building the same capability themselves.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <div class="ic">__SVC2__</div>
+        <h3>One fee, a whole team</h3>
+        <p class="muted">A salary buys a single hire. Our monthly fee gives you a team, from first-line support to senior engineers, for less than the cost of one experienced person on your own payroll.</p>
+      </div>
+      <div class="card">
+        <div class="ic">__CALC__</div>
+        <h3>No hidden on-costs</h3>
+        <p class="muted">Employer's National Insurance, pension, recruitment fees, equipment, training and software licences all stack on top of a salary. With us they're already inside one number, with nothing to budget for separately.</p>
+      </div>
+      <div class="card">
+        <div class="ic">__SHIELD__</div>
+        <h3>No cover gaps, no key-person risk</h3>
+        <p class="muted">When your one hire is on holiday, off sick or hands in their notice, you're exposed, and often paying twice to plug the gap. Cover, continuity and a senior escalation path are built into the service.</p>
+      </div>
+    </div>
+    <p class="lead center" style="margin:34px auto 0">The result is straightforward: a stronger IT function than most businesses could hire for the money, without the overhead, the admin or the risk of doing it yourself.</p>
+    <div class="center" style="margin-top:26px">
+      <button class="btn btn-primary" data-go="book">Get a tailored quote</button>
+    </div>
+  </section>
+
+  <!-- security -->
+  <section class="wrap">
+    <div class="grid g2" style="align-items:center">
+      <div>
+        <span class="eyebrow">Security &amp; compliance</span>
+        <h2 style="margin:18px 0 10px;font-size:clamp(1.8rem,3.4vw,2.6rem)">Security-first, not security-optional</h2>
+        <p class="muted">Most business breaches start with email and unpatched systems. We close those gaps as part of the service, not as an upsell.</p>
+        <ul class="feat" style="margin-top:18px">
+          <li><span class="chk">__CHK__</span><span><b>Cyber Essentials / ISO-aligned readiness</b> baked into how we configure and run your environment.</span></li>
+          <li><span class="chk">__CHK__</span><span><b>Email security</b>, DMARC/SPF, anti-impersonation and phishing protection.</span></li>
+          <li><span class="chk">__CHK__</span><span><b>Backup and disaster recovery as standard</b>, tested, not assumed.</span></li>
+        </ul>
+      </div>
+      <div class="card" style="background:var(--aurora-soft)">
+        <span class="free-badge" style="margin-bottom:16px">__CHK__ 100% free report</span>
+        <h3>Free email impersonation check</h3>
+        <p class="muted">See in plain English whether criminals could send scam emails in your business's name. We read public DNS only, no logins, nothing stored, and give you a free report you can act on.</p>
+        <button class="btn btn-primary btn-sm" data-go="security">Check my domain free</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- final cta -->
+  <section class="wrap">
+    <div class="band">
+      <div class="halo" style="position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(236,72,153,.18),transparent 60%)"></div>
+      <h2 style="position:relative">Ready to hand off your IT?</h2>
+      <p class="muted" style="position:relative">Tell us about your business and we'll show you what a world-class, globally delivered IT function looks like for your team.</p>
+      <button class="btn btn-primary" style="position:relative" data-go="book">Book with Team</button>
+    </div>
+  </section>
+</div>
+
+<!-- ============ MANAGED IT ============ -->
+<div class="page" id="page-managed">
+  <section class="wrap" style="padding-top:64px;padding-bottom:30px">
+    <span class="eyebrow">Managed IT &amp; Helpdesk Services</span>
+    <h1 style="margin:20px 0 14px;font-size:clamp(2rem,4.4vw,3rem)">Your outsourced IT department</h1>
+    <p class="lead">ResolveCloud becomes your complete IT function, whatever your size. We run the helpdesk your people call, the Microsoft 365 and Azure platforms they work in, the devices in their hands and the security and backups that keep you safe, all under one predictable per-user fee, backed by 15+ years of experience and delivered 24×7.</p>
+  </section>
+  <section class="wrap" style="padding-top:20px">
+    <div class="grid g2">
+      <div class="card">
+        <div class="feature-row"><div class="ic">__M1__</div><div><h4>Helpdesk</h4><p>Friendly first-line and technical support for your whole team. We resolve the day-to-day issues fast, you stop being the person everyone asks.</p></div></div>
+        <div class="feature-row"><div class="ic">__M2__</div><div><h4>Microsoft 365</h4><p>Email, Teams, SharePoint and licensing managed properly, secured, tidy and backed up, so collaboration just works.</p></div></div>
+        <div class="feature-row"><div class="ic">__M3__</div><div><h4>Azure</h4><p>We design, run and cost-optimise your cloud so it stays fast and secure without surprise bills.</p></div></div>
+        <div class="feature-row"><div class="ic">__M4__</div><div><h4>Endpoint management</h4><p>Every laptop and desktop enrolled, encrypted, patched and policy-controlled. New starters ready on day one, leavers locked out instantly.</p></div></div>
+      </div>
+      <div class="card">
+        <div class="feature-row"><div class="ic">__M5__</div><div><h4>Backup &amp; DR</h4><p>Automated, tested backups of your data and Microsoft 365, so a mistake, outage or attack is a recovery, not a crisis.</p></div></div>
+        <div class="feature-row"><div class="ic">__M6__</div><div><h4>Cyber security</h4><p>EDR, email protection, MFA and security-standard hardening as standard. We reduce the risk; you get on with business.</p></div></div>
+        <div class="feature-row"><div class="ic">__M7__</div><div><h4>Monitoring</h4><p>We watch your systems around the clock and fix many issues before you'd ever notice. We patch, we monitor, you stop worrying about it.</p></div></div>
+        <div class="feature-row"><div class="ic">__SHIELD__</div><div><h4>One accountable partner</h4><p>One contract, one number to call, one team that owns the outcome across everything above.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap">
+    <div class="sec-head"><span class="eyebrow">What we standardise</span><h2 style="margin-top:18px">A proven stack on every client</h2>
+    <p class="muted">We don't reinvent your IT from scratch. Every ResolveCloud client runs the same core, battle-tested tooling, which is exactly why it's reliable and cost-effective.</p></div>
+    <div class="grid g2">
+      <ul class="feat">
+        <li><span class="chk">__CHK__</span><span><b>RMM</b>, remote monitoring &amp; management for patching and proactive fixes.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>EDR</b>, endpoint detection &amp; response on every device.</span></li>
+      </ul>
+      <ul class="feat">
+        <li><span class="chk">__CHK__</span><span><b>Email security</b>, DMARC/SPF/DKIM, anti-phishing and impersonation protection.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>Backup</b>, data and Microsoft 365 backup with tested recovery.</span></li>
+      </ul>
+    </div>
+  </section>
+  <section class="wrap"><div class="band">
+    <h2>See what Managed IT &amp; Helpdesk would cost for your team</h2>
+    <p class="muted">Tell us your headcount and current setup, we'll be straight with you about the right approach and price.</p>
+    <button class="btn btn-primary" data-go="book">Book with Team</button>
+  </div></section>
+</div>
+
+<!-- ============ OFFSHORE TALENT ============ -->
+<div class="page" id="page-offshore">
+  <section class="wrap" style="padding-top:64px;padding-bottom:30px">
+    <span class="eyebrow">Offshore IT Talent</span>
+    <h1 style="margin:20px 0 14px;font-size:clamp(2rem,4.4vw,3rem)">Dedicated talent, expertly managed</h1>
+    <p class="lead">This isn't a vague pool of "resources". You get named, dedicated engineers and analysts on a simple monthly fee, interviewed by you, embedded in your tools and processes, and managed under a clear contract with a senior escalation path. They feel like part of your team because, in every way that matters, they are, at a fraction of local hiring cost.</p>
+  </section>
+  <section class="wrap" style="padding-top:20px">
+    <div class="sec-head"><span class="eyebrow">Roles we provide</span><h2 style="margin-top:18px">Pick the people you need</h2></div>
+    <div class="grid g2">
+      <div class="card"><h3>Dedicated IT Engineers</h3><ul class="feat" style="margin-top:6px">
+        <li><span class="chk">__CHK__</span><span>Own day-to-day support, fixes and changes across your environment.</span></li>
+        <li><span class="chk">__CHK__</span><span>Onboard new starters, manage devices and keep systems patched.</span></li></ul></div>
+      <div class="card"><h3>Service Desk Analysts</h3><ul class="feat" style="margin-top:6px">
+        <li><span class="chk">__CHK__</span><span>First point of contact for your staff's tickets and calls.</span></li>
+        <li><span class="chk">__CHK__</span><span>Triage, resolve and escalate cleanly, keeping SLAs on track.</span></li></ul></div>
+      <div class="card"><h3>Azure Engineers</h3><ul class="feat" style="margin-top:6px">
+        <li><span class="chk">__CHK__</span><span>Build, secure and maintain your cloud infrastructure.</span></li>
+        <li><span class="chk">__CHK__</span><span>Optimise cost and performance, and run migrations.</span></li></ul></div>
+      <div class="card"><h3>Microsoft 365 Administrators</h3><ul class="feat" style="margin-top:6px">
+        <li><span class="chk">__CHK__</span><span>Manage Exchange, Teams, SharePoint, licensing and policies.</span></li>
+        <li><span class="chk">__CHK__</span><span>Harden tenants and keep collaboration secure and tidy.</span></li></ul></div>
+      <div class="card"><h3>SOC Analysts</h3><ul class="feat" style="margin-top:6px">
+        <li><span class="chk">__CHK__</span><span>Monitor alerts, investigate threats and respond to incidents.</span></li>
+        <li><span class="chk">__CHK__</span><span>Tune detections and keep your security posture sharp.</span></li></ul></div>
+      <div class="card"><h3>Power Platform Developers</h3><ul class="feat" style="margin-top:6px">
+        <li><span class="chk">__CHK__</span><span>Build Power Apps, flows and dashboards to cut manual work.</span></li>
+        <li><span class="chk">__CHK__</span><span>Turn spreadsheets and email chains into proper tools.</span></li></ul></div>
+      <div class="card"><h3>Automation Engineers</h3><ul class="feat" style="margin-top:6px">
+        <li><span class="chk">__CHK__</span><span>Automate repetitive IT and business tasks end to end.</span></li>
+        <li><span class="chk">__CHK__</span><span>Scripting, integrations and pipelines that save real hours.</span></li></ul></div>
+      <div class="card" style="background:var(--aurora-soft)"><h3>Not sure which?</h3><p class="muted">Tell us the problem and the headcount you're considering, we'll recommend the right mix of roles.</p><button class="btn btn-primary btn-sm" data-go="book">Talk it through</button></div>
+    </div>
+  </section>
+  <section class="wrap">
+    <div class="grid g2" style="align-items:center">
+      <div><span class="eyebrow">How we protect quality</span>
+        <h2 style="margin:18px 0 10px;font-size:clamp(1.8rem,3.4vw,2.6rem)">Offshore, without the offshore risks</h2>
+        <p class="muted">The reason "offshore" sometimes goes wrong is poor management and continuity. We build the safeguards in from day one.</p></div>
+      <ul class="feat">
+        <li><span class="chk">__CHK__</span><span><b>Working-hours overlap</b> with your day, plus 24×7 cover where you need it.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>A senior escalation path</b>, an experienced lead you can call when something's serious.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>Continuity if someone leaves</b>, documented work and a ready backup, so you're never stranded.</span></li>
+        <li><span class="chk">__CHK__</span><span><b>Clear contracts and accountability</b>, you deal with ResolveCloud, end to end.</span></li>
+      </ul>
+    </div>
+  </section>
+  <section class="wrap"><div class="band">
+    <h2>Tell us the role you need and your headcount</h2>
+    <p class="muted">We'll shortlist dedicated people and set up the escalation and continuity around them.</p>
+    <button class="btn btn-primary" data-go="book">Book with Team</button>
+  </div></section>
+</div>
+
+<!-- ============ CO-MANAGED ============ -->
+<div class="page" id="page-comanaged">
+  <section class="wrap" style="padding-top:64px;padding-bottom:30px">
+    <span class="eyebrow">Co-Managed IT</span>
+    <h1 style="margin:20px 0 14px;font-size:clamp(2rem,4.4vw,3rem)">We wrap around your IT team</h1>
+    <p class="lead">If you already have internal IT people, you don't need replacing, you need backup. ResolveCloud sits alongside your existing team, taking the overnight cover, the overflow tickets and the big projects off their plate. They stay in control; we give them depth, cover and a team to lean on.</p>
+  </section>
+  <section class="wrap" style="padding-top:20px">
+    <div class="grid g2">
+      <div class="card">
+        <div class="feature-row"><div class="ic">__M7__</div><div><h4>Overnight support</h4><p>24×7 cover so your internal team isn't on call at 2am, and your business has eyes on systems while everyone sleeps.</p></div></div>
+        <div class="feature-row"><div class="ic">__M1__</div><div><h4>Overflow support</h4><p>When the ticket queue spikes, we absorb the overflow so your people aren't drowning and SLAs hold.</p></div></div>
+        <div class="feature-row"><div class="ic">__M3__</div><div><h4>Project delivery</h4><p>Migrations, rollouts and upgrades delivered by us, so your internal team can keep the lights on.</p></div></div>
+      </div>
+      <div class="card">
+        <div class="feature-row"><div class="ic">__M6__</div><div><h4>Escalation engineers</h4><p>Senior Azure, M365 and infrastructure specialists on tap when your team hits something gnarly.</p></div></div>
+        <div class="feature-row"><div class="ic">__SHIELD__</div><div><h4>Security operations</h4><p>SOC monitoring and incident response bolted onto your existing setup, without you building a security team.</p></div></div>
+        <div class="feature-row"><div class="ic">__M2__</div><div><h4>Shared tooling</h4><p>We plug into your stack and ways of working, co-managed, not parallel.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap">
+    <div class="card" style="background:var(--aurora-soft)">
+      <span class="eyebrow">Who this is for</span>
+      <h3 style="margin:16px 0 12px;font-size:1.5rem">Co-Managed IT fits you if…</h3>
+      <ul class="feat">
+        <li><span class="chk">__CHK__</span><span>Your internal IT is overwhelmed with day-to-day tickets and can't get ahead.</span></li>
+        <li><span class="chk">__CHK__</span><span>You have no proper 24×7 cover, and key-person risk if your IT lead is off.</span></li>
+        <li><span class="chk">__CHK__</span><span>There's a backlog of projects that never quite gets started.</span></li>
+        <li><span class="chk">__CHK__</span><span>You want senior specialist skills occasionally, not a full-time senior salary.</span></li>
+      </ul>
+    </div>
+  </section>
+  <section class="wrap"><div class="band">
+    <h2>Show us your current IT setup and backlog</h2>
+    <p class="muted">We'll map where we can take pressure off your team fastest, overnight, overflow or projects.</p>
+    <button class="btn btn-primary" data-go="book">Book with Team</button>
+  </div></section>
+</div>
+
+<!-- ============ FREE EMAIL SECURITY CHECK ============ -->
+<div class="page" id="page-security">
+  <section class="wrap" style="padding-top:64px;padding-bottom:20px">
+    <div class="center" style="max-width:760px;margin:0 auto">
+      <span class="free-badge" style="margin-bottom:18px">__CHK__ Free report · no signup</span>
+      <h1 style="margin:8px 0 14px;font-size:clamp(2.1rem,4.6vw,3.2rem)">Could criminals send scam emails <span class="grad-text">in your name?</span></h1>
+      <p class="lead" style="margin:0 auto 14px">Most attacks on businesses start with email. If your domain's DMARC, SPF and DKIM records aren't set up properly, scammers can impersonate your company to your own customers and staff, fake invoices, fake requests, real losses. Enter your domain for a free, plain-English report. We read public DNS only: no logins, nothing stored, nothing to pay.</p>
+    </div>
+  </section>
+  <section class="wrap" id="scan-input-section" style="padding-top:10px">
+    <div class="scan-box">
+      <input id="domainInput" type="text" placeholder="yourcompany.com" aria-label="Domain name" autocomplete="off" />
+      <button class="btn btn-primary" id="scanBtn">Get my free report</button>
+    </div>
+    <div id="scanError" class="scan-err" style="display:none"></div>
+    <div class="trust">
+      <span>__LOCK__ Public DNS only, no logins</span>
+      <span>__SHIELDMINI__ Nothing stored or tracked</span>
+      <span>__DOC__ Free plain-English report</span>
+    </div>
+  </section>
+  <section class="wrap" id="scan-progress" style="display:none">
+    <div class="progress-wrap">
+      <div class="pulse">__SHIELD__</div>
+      <h3 id="progressDomain" style="font-size:1.4rem">Scanning…</h3>
+      <p class="muted" id="progressMsg">Locating domain records…</p>
+      <div class="bar"><i id="progressBar"></i></div>
+    </div>
+  </section>
+  <section class="wrap" id="scan-results" style="display:none;padding-top:30px"></section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" id="page-about">
+  <section class="wrap" style="padding-top:64px;padding-bottom:20px">
+    <span class="eyebrow">About ResolveCloud</span>
+    <h1 style="margin:20px 0 14px;font-size:clamp(2rem,4.4vw,3rem)">Experience you can build a business on</h1>
+    <p class="lead">We started ResolveCloud because too many businesses are stuck between two bad options: an overstretched single IT hire, or a faceless provider that treats them like a number. We bring something different, real expertise and accountability, with the cost and scale of a global delivery team.</p>
+  </section>
+  <section class="wrap" style="padding-top:10px">
+    <div class="grid g2">
+      <div class="card">
+        <div class="ic">__M2__</div>
+        <h3>Who we are</h3>
+        <p class="muted">ResolveCloud was founded by a team with over 15 years of combined experience across IT and technology talent. That mix is deliberate: we know how to find genuinely good engineers, and we know how to run technology that businesses depend on, for clients around the world.</p>
+      </div>
+      <div class="card">
+        <div class="ic">__GLOBE__</div>
+        <h3>How we deliver</h3>
+        <p class="muted">Experienced leadership owns your account, architecture, security governance and strategy. A skilled global delivery team handles the operational work, giving you genuine 24×7 coverage at a fraction of in-house cost. You always have a clear point of contact and a clear contract, the global delivery sits neatly behind it.</p>
+      </div>
+      <div class="card">
+        <div class="ic">__SVC2__</div>
+        <h3>Who we work with</h3>
+        <p class="muted">Recruitment agencies, professional services firms, charities, education providers, and businesses of every size and sector, anywhere in the world, that want dependable IT without building a department. If that sounds like you, we'll fit.</p>
+      </div>
+      <div class="card" style="background:var(--aurora-soft)">
+        <div class="ic" style="background:var(--navy-2)">__SHIELD__</div>
+        <h3>What we value</h3>
+        <ul class="feat" style="margin-top:6px">
+          <li><span class="chk">__CHK__</span><span><b>Reliability</b>, boring, dependable IT is the goal.</span></li>
+          <li><span class="chk">__CHK__</span><span><b>Transparency</b>, clear pricing, clear contracts, no jargon.</span></li>
+          <li><span class="chk">__CHK__</span><span><b>Security-first</b>, protection built in, never bolted on.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="wrap"><div class="band">
+    <h2>Let's talk about your IT</h2>
+    <p class="muted">Tell us where you are now and where you want to be. We'll be honest about how we can help.</p>
+    <button class="btn btn-primary" data-go="book">Book with Team</button>
+  </div></section>
+</div>
+
+<!-- ============ BOOK WITH TEAM ============ -->
+<div class="page" id="page-book">
+  <section class="wrap" style="padding-top:64px">
+    <div class="center" style="max-width:680px;margin:0 auto 36px">
+      <span class="eyebrow">Book with Team</span>
+      <h1 style="margin:20px 0 14px;font-size:clamp(2rem,4.4vw,3rem)">Tell us about your business</h1>
+      <p class="lead" style="margin:0 auto">Share a few details and we'll schedule a consultation to talk through your IT, your team and where ResolveCloud fits. No hard sell, just a straight conversation.</p>
+    </div>
+    <form class="form-card" id="bookForm">
+      <div class="row2">
+        <div class="fg"><label>Full name <span class="req">*</span></label><input type="text" name="fullName" required></div>
+        <div class="fg"><label>Company name <span class="req">*</span></label><input type="text" name="company" required></div>
+      </div>
+      <div class="row2">
+        <div class="fg"><label>Work email <span class="req">*</span></label><input type="email" name="email" required></div>
+        <div class="fg"><label>Phone number</label><input type="tel" name="phone"></div>
+      </div>
+      <div class="row2">
+        <div class="fg"><label>Number of employees <span class="req">*</span></label>
+          <select name="employees" required>
+            <option value="">Select…</option>
+            <option>1–9</option><option>10–25</option><option>26–50</option><option>51–100</option><option>101–250</option><option>250+</option>
+          </select></div>
+        <div class="fg"><label>Country / region</label><input type="text" name="country" placeholder="e.g. United States"></div>
+      </div>
+      <div class="fg"><label>Current IT setup <span class="muted" style="font-weight:400">(select all that apply)</span></label>
+        <div class="opts" data-group="setup">
+          <label class="opt"><input type="checkbox" name="setup" value="No internal IT"><span>No internal IT</span></label>
+          <label class="opt"><input type="checkbox" name="setup" value="1–2 internal IT staff"><span>1–2 internal IT staff</span></label>
+          <label class="opt"><input type="checkbox" name="setup" value="In-house IT team"><span>In-house IT team</span></label>
+          <label class="opt"><input type="checkbox" name="setup" value="Outsourced MSP"><span>Outsourced MSP</span></label>
+        </div>
+      </div>
+      <div class="fg"><label>Services you're interested in</label>
+        <div class="opts" data-group="services">
+          <label class="opt"><input type="checkbox" name="services" value="Managed IT &amp; Helpdesk Services"><span>Managed IT &amp; Helpdesk Services</span></label>
+          <label class="opt"><input type="checkbox" name="services" value="Offshore IT Talent"><span>Offshore IT Talent</span></label>
+          <label class="opt"><input type="checkbox" name="services" value="Co-Managed IT"><span>Co-Managed IT</span></label>
+          <label class="opt"><input type="checkbox" name="services" value="Email Security / DMARC"><span>Email Security / DMARC</span></label>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="fg"><label>Preferred contact method</label>
+          <select name="contactMethod"><option>Email</option><option>Phone</option></select></div>
+        <div class="fg"><label>Preferred time for a call</label>
+          <select name="callTime"><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+      </div>
+      <div class="fg"><label>Anything else we should know about your IT challenges?</label>
+        <textarea name="notes" placeholder="Tickets piling up, an upcoming office move, a security worry, a project that's stalled…"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send to ResolveCloud team</button>
+      <p class="muted" style="font-size:.82rem;text-align:center;margin:14px 0 0">Submitting opens your email app with the details pre-filled, addressed to ResolveCloud24x7@gmail.com.</p>
+    </form>
+    <div class="form-success" id="bookSuccess">
+      <div class="ic">__CHKBIG__</div>
+      <h2>Thanks, your details are ready to send</h2>
+      <p class="muted">Your email app should have opened with everything filled in. Just press send and the ResolveCloud team will be in touch shortly. If nothing opened, email us directly at <a class="grad-text" href="mailto:ResolveCloud24x7@gmail.com" style="font-weight:600">ResolveCloud24x7@gmail.com</a>.</p>
+      <button class="btn btn-ghost" id="bookAgain" style="margin-top:10px">Submit another enquiry</button>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<!-- platform logos · bottom trust band -->
+<section class="logos-band">
+  <div class="wrap">
+    <p class="logos-cap">The platforms we run, secure and optimise every day</p>
+    <div class="marquee">
+      <div class="marquee-track">
+        <!-- set 1 -->
+        <div class="logo-item"><svg viewBox="0 0 96 96" aria-hidden="true"><defs><linearGradient id="az_a" x1="60.9" y1="9.7" x2="33" y2="92.2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#114a8b"/><stop offset="1" stop-color="#0669bc"/></linearGradient><linearGradient id="az_c" x1="66.1" y1="7.4" x2="96.8" y2="89" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3ccbf4"/><stop offset="1" stop-color="#2892df"/></linearGradient></defs><path fill="url(#az_a)" d="M33.34 6.54h26.04l-27.03 80.07a4.15 4.15 0 0 1-3.93 2.85H8.15a4.14 4.14 0 0 1-3.92-5.47L29.4 9.4a4.15 4.15 0 0 1 3.94-2.86z"/><path fill="#0078d4" d="M71.17 60.13H29.84a1.91 1.91 0 0 0-1.3 3.32l26.57 24.79a4.17 4.17 0 0 0 2.84 1.11h23.38z"/><path fill="url(#az_c)" d="M66.6 9.4a4.14 4.14 0 0 0-3.93-2.86H33.65a4.14 4.14 0 0 1 3.93 2.86l24.83 73.55a4.14 4.14 0 0 1-3.93 5.47h29.02a4.14 4.14 0 0 0 3.93-5.47z"/></svg><span class="lw">Azure</span></div>
+        <div class="logo-item"><svg viewBox="0 0 56 34" role="img" aria-label="Amazon Web Services"><text x="28" y="18" text-anchor="middle" font-family="Arial,'Helvetica Neue',Helvetica,sans-serif" font-weight="700" font-size="20" letter-spacing="-.5" fill="#E8EDF8">aws</text><path d="M12 25c6.5 4.2 25.5 4.2 32 0" fill="none" stroke="#FF9900" stroke-width="2.6" stroke-linecap="round"/><path d="M40.5 22.6l4.4 1.8-1.9 4.3" fill="none" stroke="#FF9900" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="logo-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.04 12.26c0-.82-.07-1.6-.2-2.36H12v4.46h6.2a5.3 5.3 0 0 1-2.3 3.48v2.9h3.72c2.18-2 3.42-4.96 3.42-8.48Z" fill="#4285F4"/><path d="M12 24c3.1 0 5.7-1.03 7.62-2.78l-3.72-2.9c-1.03.7-2.36 1.1-3.9 1.1-3 0-5.55-2.03-6.46-4.76H1.7v2.98A12 12 0 0 0 12 24Z" fill="#34A853"/><path d="M5.54 14.66a7.2 7.2 0 0 1 0-4.6V7.08H1.7a12 12 0 0 0 0 10.56l3.84-2.98Z" fill="#FBBC05"/><path d="M12 4.74c1.69 0 3.2.58 4.4 1.72l3.3-3.3C17.7 1.26 15.1.24 12 .24A12 12 0 0 0 1.7 7.08l3.84 2.98C6.45 7.33 9 4.74 12 4.74Z" fill="#EA4335"/></svg><span class="lw">Google Cloud</span></div>
+        <div class="logo-item"><svg viewBox="0 0 30 24" aria-hidden="true"><path d="M13.8 6.4a4.7 4.7 0 0 1 8.2 1.2 4.1 4.1 0 0 1 .6 8.1H8.7A4.3 4.3 0 0 1 8 7.3c.3 0 .6 0 .9.1a4.7 4.7 0 0 1 4.9-1Z" fill="#00A1E0"/></svg><span class="lw">Salesforce</span></div>
+        <div class="logo-item"><svg viewBox="0 0 28 24" aria-hidden="true"><rect x="2" y="6" width="15" height="12" rx="3.5" fill="#2D8CFF"/><path d="M18 10 25 6.8v10.4L18 14Z" fill="#2D8CFF"/></svg><span class="lw">Zoom</span></div>
+        <div class="logo-item"><svg viewBox="0 0 34 22" aria-hidden="true"><path d="M23.6 16H9.4a4 4 0 0 1-.5-7.9 5.9 5.9 0 0 1 11.1-1.3 3.4 3.4 0 0 1 4.8 3.1 3.4 3.4 0 0 1-1.4 2.8l.3.2A2.7 2.7 0 0 1 23.6 16Z" fill="#F6821F"/><path d="M25.8 11a3.4 3.4 0 0 0-2-.9l-11.4-.2c-.2 0-.3.2-.2.3 0 .2.2.3.4.3l11.3.2c.7 0 1.2.3 1.5.9Z" fill="#FBAD41"/></svg><span class="lw">Cloudflare</span></div>
+        <!-- set 2 · duplicate for seamless loop -->
+        <div class="logo-item" aria-hidden="true"><svg viewBox="0 0 96 96"><defs><linearGradient id="az_a2" x1="60.9" y1="9.7" x2="33" y2="92.2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#114a8b"/><stop offset="1" stop-color="#0669bc"/></linearGradient><linearGradient id="az_c2" x1="66.1" y1="7.4" x2="96.8" y2="89" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3ccbf4"/><stop offset="1" stop-color="#2892df"/></linearGradient></defs><path fill="url(#az_a2)" d="M33.34 6.54h26.04l-27.03 80.07a4.15 4.15 0 0 1-3.93 2.85H8.15a4.14 4.14 0 0 1-3.92-5.47L29.4 9.4a4.15 4.15 0 0 1 3.94-2.86z"/><path fill="#0078d4" d="M71.17 60.13H29.84a1.91 1.91 0 0 0-1.3 3.32l26.57 24.79a4.17 4.17 0 0 0 2.84 1.11h23.38z"/><path fill="url(#az_c2)" d="M66.6 9.4a4.14 4.14 0 0 0-3.93-2.86H33.65a4.14 4.14 0 0 1 3.93 2.86l24.83 73.55a4.14 4.14 0 0 1-3.93 5.47h29.02a4.14 4.14 0 0 0 3.93-5.47z"/></svg><span class="lw">Azure</span></div>
+        <div class="logo-item" aria-hidden="true"><svg viewBox="0 0 56 34"><text x="28" y="18" text-anchor="middle" font-family="Arial,'Helvetica Neue',Helvetica,sans-serif" font-weight="700" font-size="20" letter-spacing="-.5" fill="#E8EDF8">aws</text><path d="M12 25c6.5 4.2 25.5 4.2 32 0" fill="none" stroke="#FF9900" stroke-width="2.6" stroke-linecap="round"/><path d="M40.5 22.6l4.4 1.8-1.9 4.3" fill="none" stroke="#FF9900" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="logo-item" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.04 12.26c0-.82-.07-1.6-.2-2.36H12v4.46h6.2a5.3 5.3 0 0 1-2.3 3.48v2.9h3.72c2.18-2 3.42-4.96 3.42-8.48Z" fill="#4285F4"/><path d="M12 24c3.1 0 5.7-1.03 7.62-2.78l-3.72-2.9c-1.03.7-2.36 1.1-3.9 1.1-3 0-5.55-2.03-6.46-4.76H1.7v2.98A12 12 0 0 0 12 24Z" fill="#34A853"/><path d="M5.54 14.66a7.2 7.2 0 0 1 0-4.6V7.08H1.7a12 12 0 0 0 0 10.56l3.84-2.98Z" fill="#FBBC05"/><path d="M12 4.74c1.69 0 3.2.58 4.4 1.72l3.3-3.3C17.7 1.26 15.1.24 12 .24A12 12 0 0 0 1.7 7.08l3.84 2.98C6.45 7.33 9 4.74 12 4.74Z" fill="#EA4335"/></svg><span class="lw">Google Cloud</span></div>
+        <div class="logo-item" aria-hidden="true"><svg viewBox="0 0 30 24"><path d="M13.8 6.4a4.7 4.7 0 0 1 8.2 1.2 4.1 4.1 0 0 1 .6 8.1H8.7A4.3 4.3 0 0 1 8 7.3c.3 0 .6 0 .9.1a4.7 4.7 0 0 1 4.9-1Z" fill="#00A1E0"/></svg><span class="lw">Salesforce</span></div>
+        <div class="logo-item" aria-hidden="true"><svg viewBox="0 0 28 24"><rect x="2" y="6" width="15" height="12" rx="3.5" fill="#2D8CFF"/><path d="M18 10 25 6.8v10.4L18 14Z" fill="#2D8CFF"/></svg><span class="lw">Zoom</span></div>
+        <div class="logo-item" aria-hidden="true"><svg viewBox="0 0 34 22"><path d="M23.6 16H9.4a4 4 0 0 1-.5-7.9 5.9 5.9 0 0 1 11.1-1.3 3.4 3.4 0 0 1 4.8 3.1 3.4 3.4 0 0 1-1.4 2.8l.3.2A2.7 2.7 0 0 1 23.6 16Z" fill="#F6821F"/><path d="M25.8 11a3.4 3.4 0 0 0-2-.9l-11.4-.2c-.2 0-.3.2-.2.3 0 .2.2.3.4.3l11.3.2c.7 0 1.2.3 1.5.9Z" fill="#FBAD41"/></svg><span class="lw">Cloudflare</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" data-go="home" style="margin-bottom:14px"><span class="tile">RC</span><span class="word"><b>Resolve</b><span class="grad-text">Cloud</span></span></div>
+        <p class="muted" style="max-width:380px">Enterprise-Grade IT, delivered worldwide. 15+ years of combined experience giving businesses of any size a complete IT function, without enterprise hiring costs.</p>
+        <p class="muted" style="font-size:.9rem"><a href="mailto:ResolveCloud24x7@gmail.com" class="grad-text" style="font-weight:600">ResolveCloud24x7@gmail.com</a></p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <a data-go="managed">Managed IT &amp; Helpdesk Services</a>
+        <a data-go="offshore">Offshore IT Talent</a>
+        <a data-go="comanaged">Co-Managed IT</a>
+        <a data-go="security">Free Email Security Check</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a data-go="about">About ResolveCloud</a>
+        <a data-go="book">Book with Team</a>
+        <a data-go="home">Home</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> ResolveCloud. Enterprise-Grade IT, delivered worldwide.</span>
+      <span>Reliability · Transparency · Security-first</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================= ICONS ================= */
+const ICONS={
+  ARR:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  CHK:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+  CHKBIG:'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+  SHIELD:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>',
+  SHIELDMINI:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>',
+  LOCK:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  DOC:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>',
+  GLOBE:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>',
+  STAR:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3 7 7 .5-5.3 4.6L18.5 22 12 18l-6.5 4 1.8-7.9L2 9.5 9 9z"/></svg>',
+  CALC:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M12 10h2M16 10h0M8 14h2M12 14h2M16 14h0M8 18h2M12 18h2"/></svg>',
+  SVC1:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+  SVC2:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  SVC3:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>',
+  M1:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>',
+  M2:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>',
+  M3:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 6 6 0 0 0-11.6-2A4.5 4.5 0 0 0 6.5 19z"/></svg>',
+  M4:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h10M7 11h6"/></svg>',
+  M5:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></svg>',
+  M6:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>',
+  M7:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>'
+};
+(function(){
+  let html=document.body.innerHTML;
+  const map={'__ARR__':ICONS.ARR,'__CHK__':ICONS.CHK,'__CHKBIG__':ICONS.CHKBIG,'__SHIELD__':ICONS.SHIELD,
+    '__SHIELDMINI__':ICONS.SHIELDMINI,'__LOCK__':ICONS.LOCK,'__DOC__':ICONS.DOC,'__GLOBE__':ICONS.GLOBE,'__STAR__':ICONS.STAR,'__CALC__':ICONS.CALC,
+    '__SVC1__':ICONS.SVC1,'__SVC2__':ICONS.SVC2,'__SVC3__':ICONS.SVC3,
+    '__M1__':ICONS.M1,'__M2__':ICONS.M2,'__M3__':ICONS.M3,'__M4__':ICONS.M4,'__M5__':ICONS.M5,'__M6__':ICONS.M6,'__M7__':ICONS.M7};
+  for(const k in map){html=html.split(k).join(map[k]);}
+  document.body.innerHTML=html;
+})();
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* ================= ROUTER ================= */
+const PAGES=['home','managed','offshore','comanaged','security','about','book'];
+function go(page){
+  if(!PAGES.includes(page))page='home';
+  PAGES.forEach(p=>{const el=document.getElementById('page-'+p);if(el)el.classList.toggle('active',p===page);});
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('data-go')===page));
+  document.getElementById('navlinks').classList.remove('open');
+  if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
+  window.scrollTo(0,0);
+}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go]');if(t){e.preventDefault();go(t.getAttribute('data-go'));}});
+window.addEventListener('hashchange',()=>go((location.hash||'#home').slice(1)));
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));
+go((location.hash||'#home').slice(1));
+
+/* ================= BOOKING FORM ================= */
+document.querySelectorAll('.opt input').forEach(cb=>{
+  cb.addEventListener('change',()=>cb.closest('.opt').classList.toggle('checked',cb.checked));
+});
+const bookForm=document.getElementById('bookForm');
+bookForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(bookForm);
+  const setup=f.getAll('setup');const services=f.getAll('services');
+  const L=[];
+  L.push('New consultation request via the ResolveCloud website');
+  L.push('==============================================');
+  L.push('Full name: '+(f.get('fullName')||''));
+  L.push('Company: '+(f.get('company')||''));
+  L.push('Work email: '+(f.get('email')||''));
+  L.push('Phone: '+(f.get('phone')||'(not given)'));
+  L.push('Number of employees: '+(f.get('employees')||''));
+  L.push('Country / region: '+(f.get('country')||'(not given)'));
+  L.push('Current IT setup: '+(setup.length?setup.join(', '):'(none selected)'));
+  L.push('Services of interest: '+(services.length?services.join(', '):'(none selected)'));
+  L.push('Preferred contact method: '+(f.get('contactMethod')||''));
+  L.push('Preferred time for a call: '+(f.get('callTime')||''));
+  L.push('');
+  L.push('Notes / IT challenges:');
+  L.push(f.get('notes')||'(none)');
+  const subject='ResolveCloud enquiry, '+(f.get('company')||'New enquiry');
+  const body=L.join('\r\n');
+  window.location.href='mailto:ResolveCloud24x7@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  bookForm.style.display='none';
+  document.getElementById('bookSuccess').style.display='block';
+  window.scrollTo(0,0);
+});
+document.getElementById('bookAgain').addEventListener('click',()=>{
+  bookForm.reset();
+  document.querySelectorAll('.opt').forEach(o=>o.classList.remove('checked'));
+  document.getElementById('bookSuccess').style.display='none';
+  bookForm.style.display='block';
+});
+
+/* ================= DMARC / SPF SCANNER ================= */
+const GROUPS=[
+  {key:'web',title:'Your website & domain',sub:'The basics that keep your site online and your domain yours.'},
+  {key:'out',title:'Email impersonation protection',sub:"Stops criminals sending scam emails in your company's name."},
+  {key:'in',title:'Email privacy & delivery',sub:'Keeps email sent to you private and properly delivered.'}
+];
+const GLOSSARY=[
+  ['SPF','A public "guest list" of who may send email using your domain name.'],
+  ['DKIM','A tamper-proof seal on each email proving it genuinely came from you.'],
+  ['DMARC','The rulebook that enforces SPF & DKIM and reports impersonation attempts.'],
+  ['BIMI','Shows your verified logo next to your emails in supporting inboxes.'],
+  ['MTA-STS','Forces incoming email to use an encrypted, snoop-proof connection.'],
+  ['TLS-RPT','Daily reports about any email delivered to you without encryption.'],
+  ['DNSSEC',"A tamper-proof seal on your domain's settings so visitors can't be redirected to a fake site."],
+  ['CAA','A list of which providers may issue an SSL certificate (padlock) for your site.'],
+  ['MX','The "delivery address" that tells the world where to send your email.'],
+  ['Name servers','The phone books that tell the internet where to find your site and email.']
+];
+const T={A:1,NS:2,CNAME:5,SOA:6,MX:15,TXT:16,AAAA:28,CAA:257};
+async function doh(name,type){
+  const eps=['https://cloudflare-dns.com/dns-query?name='+encodeURIComponent(name)+'&type='+type,
+             'https://dns.google/resolve?name='+encodeURIComponent(name)+'&type='+type];
+  for(const u of eps){try{const r=await fetch(u,{headers:{accept:'application/dns-json'}});if(r.ok)return await r.json();}catch(e){}}
+  return null;
+}
+function ans(j,type){return j&&j.Answer?j.Answer.filter(a=>a.type===type).map(a=>a.data):[];}
+function anyAns(j){return j&&j.Answer&&j.Answer.length?j.Answer.map(a=>a.data):[];}
+function txt(d){return d?d.replace(/"\s+"/g,'').replace(/^"|"$/g,'').replace(/\\"/g,'"'):'';}
+async function spfLookups(domain,seen,state){
+  seen=seen||new Set();state=state||{count:0,q:0};
+  if(state.q>=30||seen.has(domain))return state;
+  seen.add(domain);state.q++;
+  const j=await doh(domain,'TXT');
+  const rec=ans(j,T.TXT).map(txt).find(t=>/^v=spf1/i.test(t));
+  if(!rec)return state;
+  for(const term of rec.split(/\s+/)){
+    const t=term.toLowerCase();
+    if(t.startsWith('include:')){state.count++;await spfLookups(term.slice(8),seen,state);}
+    else if(t.startsWith('redirect=')){state.count++;await spfLookups(term.slice(9),seen,state);}
+    else if(/^[+\-~?]?a([:/]|$)/.test(t))state.count++;
+    else if(/^[+\-~?]?mx([:/]|$)/.test(t))state.count++;
+    else if(/^[+\-~?]?ptr/.test(t))state.count++;
+    else if(t.startsWith('exists:'))state.count++;
+  }
+  return state;
+}
+async function rdap(domain){
+  try{
+    const r=await fetch('https://rdap.org/domain/'+encodeURIComponent(domain));
+    if(!r.ok)return null;
+    const j=await r.json();let registrar='',expiry='';
+    (j.entities||[]).forEach(e=>{if((e.roles||[]).includes('registrar')&&e.vcardArray){const fn=e.vcardArray[1].find(x=>x[0]==='fn');if(fn)registrar=fn[3];}});
+    (j.events||[]).forEach(ev=>{if(ev.eventAction==='expiration'&&ev.eventDate)expiry=ev.eventDate;});
+    return{registrar,expiry};
+  }catch(e){return null;}
+}
+function emailProvider(mx){const h=mx.join(' ').toLowerCase();
+  if(/protection\.outlook|outlook\.com/.test(h))return'Microsoft 365';
+  if(/aspmx|google|googlemail/.test(h))return'Google Workspace';
+  if(/mimecast/.test(h))return'Mimecast (security gateway)';
+  if(/pphosted|proofpoint/.test(h))return'Proofpoint';
+  if(/barracuda/.test(h))return'Barracuda';
+  if(/messagelabs/.test(h))return'Symantec / MessageLabs';
+  if(/zoho/.test(h))return'Zoho Mail';
+  if(/secureserver/.test(h))return'GoDaddy email';
+  if(/\S/.test(h))return'Custom / other provider';return'None detected';}
+function dnsProvider(ns){const h=ns.join(' ').toLowerCase();
+  if(/cloudflare/.test(h))return'Cloudflare';
+  if(/awsdns/.test(h))return'Amazon Route 53';
+  if(/azure-dns/.test(h))return'Microsoft Azure DNS';
+  if(/domaincontrol/.test(h))return'GoDaddy';
+  if(/googledomains|google/.test(h))return'Google';
+  if(/nsone|ns1\./.test(h))return'NS1';
+  if(/dnsmadeeasy/.test(h))return'DNS Made Easy';
+  if(/dyn(ect)?/.test(h))return'Oracle Dyn';
+  if(ns.length){const p=ns[0].replace(/\.$/,'').split('.');return p.slice(-2).join('.');}
+  return'Unknown';}
+const DKIM_SEL=['selector1','selector2','google','default','k1','s1','s2','dkim','mail','smtp','everlytickey1','mandrill','zmail'];
+function normalizeDomain(v){const d=v.trim().toLowerCase();return d.replace(/^https?:\/\//,'').replace(/^www\./,'').split('/')[0].split('?')[0].split(':')[0];}
+async function scan(domain){
+  const r=await Promise.all([
+    doh(domain,'A'),doh(domain,'AAAA'),doh(domain,'NS'),doh(domain,'MX'),doh(domain,'TXT'),
+    doh('_dmarc.'+domain,'TXT'),doh('default._bimi.'+domain,'TXT'),doh('_mta-sts.'+domain,'TXT'),
+    doh('_smtp._tls.'+domain,'TXT'),doh('www.'+domain,'A'),doh('www.'+domain,'CNAME'),doh(domain,'CAA')]);
+  const[aJ,aaaaJ,nsJ,mxJ,txtJ,dmarcJ,bimiJ,mtaJ,tlsJ,wwwAJ,wwwCJ,caaJ]=r;
+  const dkimR=await Promise.all(DKIM_SEL.map(async s=>{
+    const j=await doh(s+'._domainkey.'+domain,'TXT');let f=anyAns(j).length>0;
+    if(!f){const c=await doh(s+'._domainkey.'+domain,'CNAME');f=anyAns(c).length>0;}
+    return{name:s,found:f};}));
+  const ns=ans(nsJ,T.NS),a=ans(aJ,T.A).concat(ans(aaaaJ,T.AAAA)),mx=ans(mxJ,T.MX);
+  const d={domain,date:new Date(),ns,a,mx,
+    www:anyAns(wwwAJ).length>0||anyAns(wwwCJ).length>0,
+    caa:ans(caaJ,T.CAA),dnssec:!!((aJ&&aJ.AD)||(nsJ&&nsJ.AD)||(mxJ&&mxJ.AD)),
+    resolved:ns.length>0||a.length>0,dnsProvider:dnsProvider(ns),emailProvider:emailProvider(mx),
+    dmarc:{found:false},spf:{found:false},dkim:{found:false,selectors:[]},
+    bimi:{found:false},mtasts:{found:false},tlsrpt:{found:false},reg:null};
+  const dmarc=ans(dmarcJ,T.TXT).map(txt).find(t=>/^v=DMARC1/i.test(t));
+  if(dmarc){
+    const pol=(dmarc.match(/p\s*=\s*(none|quarantine|reject)/i)||[])[1]||'none';
+    const sp=(dmarc.match(/sp\s*=\s*(none|quarantine|reject)/i)||[])[1]||'';
+    const pct=(dmarc.match(/pct\s*=\s*(\d+)/i)||[])[1]||'100';
+    const rua=(dmarc.match(/rua=([^;]+)/i)||[])[1]||'';
+    d.dmarc={found:true,record:dmarc,policy:pol.toLowerCase(),sub:sp.toLowerCase(),pct,rua:rua.replace(/mailto:/gi,'').trim(),enforced:/quarantine|reject/i.test(pol)};
+  }
+  const spf=ans(txtJ,T.TXT).map(txt).find(t=>/^v=spf1/i.test(t));
+  if(spf){let mode='Neutral';
+    if(/-all\b/.test(spf))mode='Strict (-all)';else if(/~all\b/.test(spf))mode='Soft fail (~all)';
+    else if(/\+all\b/.test(spf))mode='Allows anyone (+all)';else if(/\?all\b/.test(spf))mode='Neutral (?all)';
+    const st=await spfLookups(domain);const lk=st.count;
+    d.spf={found:true,record:spf,mode,lookups:lk,overLimit:lk>10,insecure:/\+all\b/.test(spf),soft:/~all\b/.test(spf),valid:lk<=10&&!/\+all\b/.test(spf)};
+  }
+  const fs=dkimR.filter(x=>x.found);d.dkim={found:fs.length>0,selectors:fs.map(x=>x.name)};
+  const bimi=ans(bimiJ,T.TXT).map(txt).find(t=>/^v=BIMI1/i.test(t));
+  if(bimi)d.bimi={found:true,record:bimi,logo:(bimi.match(/l=([^;]+)/i)||[])[1]||'Not specified',vmc:(bimi.match(/a=([^;]+)/i)||[])[1]||'Not specified'};
+  const mta=ans(mtaJ,T.TXT).map(txt).find(t=>/^v=STSv1/i.test(t));
+  if(mta)d.mtasts={found:true,record:mta};
+  const tls=ans(tlsJ,T.TXT).map(txt).find(t=>/^v=TLSRPTv1/i.test(t));
+  if(tls)d.tlsrpt={found:true,record:tls,rua:(tls.match(/rua=([^;]+)/i)||[])[1]||'Not specified'};
+  d.reg=await rdap(domain);
+  return d;
+}
+function buildChecks(d){
+  const C=[];const push=o=>C.push(o);
+  push({group:'web',name:'Website address',w:6,status:d.a.length?'pass':'warn',short:d.a.length?'Live':'Not set',
+    record:d.a.slice(0,3).join(', '),plain:'This is the signpost that points your web address to the computer hosting your website.',
+    found:d.a.length?'Your domain points to a live server, so a website can load here.':'No website address is set for this domain.',
+    why:d.a.length?'Visitors typing your address reach your site.':'If you have a website this is a problem; if this domain is only used for email, you can ignore it.',
+    fix:d.a.length?null:'If you have a website, point your domain to it with your hosting provider.',e:d.a.length?6:3,sev:'Low'});
+  push({group:'web',name:'"www" version of your site',w:3,status:d.www?'pass':d.a.length?'warn':'info',short:d.www?'Works':'Missing',
+    plain:'Checks that the "www." version of your address works, not just the bare name.',
+    found:d.www?'www.'+d.domain+' loads correctly.':'No record found for the www. version of your address.',
+    why:d.www?'Visitors get to your site whether or not they type "www".':'Customers who type "www." in front of your address may get an error page.',
+    fix:d.www?null:'Add a record so the www. version forwards to your main website.',e:d.www?3:1,sev:'Low'});
+  const nsCount=d.ns.length;
+  push({group:'web',name:'Name server backup',w:4,status:nsCount>=2?'pass':nsCount===1?'warn':'fail',
+    short:nsCount>=2?nsCount+' servers':nsCount===1?'Only 1':'None',record:d.ns.slice(0,4).join(', '),
+    plain:"Name servers are the phone books that tell the internet where to find you. You want at least two, so there's a backup.",
+    found:nsCount>=2?'You have '+nsCount+' name servers.':nsCount===1?'You only have one name server.':'No name servers were found.',
+    why:nsCount>=2?'If one fails, the others keep your website and email online.':'With a single point of failure, an outage could take your website and email offline at once.',
+    fix:nsCount>=2?null:'Ask your DNS provider to add a second name server for redundancy.',e:nsCount>=2?4:nsCount===1?1:0,sev:'High'});
+  push({group:'web',name:'Who manages your DNS',w:0,status:'info',short:d.dnsProvider,
+    plain:"The company that controls your domain's settings (where your site and email point).",
+    found:'Your DNS is managed by '+d.dnsProvider+'.',why:'Handy to know who to contact when changes are needed.',e:0});
+  push({group:'web',name:'Tamper protection (DNSSEC)',w:8,status:d.dnssec?'pass':'warn',short:d.dnssec?'On':'Off',
+    plain:"A tamper-proof seal on your domain's phone-book entry.",
+    found:d.dnssec?'DNSSEC is switched on.':'DNSSEC is not switched on.',
+    why:d.dnssec?"Visitors can't be secretly redirected to a fake copy of your site.":'Without it, attackers can trick your visitors onto a fake version of your site to steal logins or card details.',
+    fix:d.dnssec?null:"Ask your DNS provider to enable DNSSEC, it's usually a single switch.",e:d.dnssec?8:0,sev:'Medium'});
+  const caa=d.caa.length>0;
+  push({group:'web',name:'SSL certificate lock (CAA)',w:4,status:caa?'pass':'info',short:caa?'Locked':'Not set',record:d.caa.slice(0,3).join(', '),
+    plain:'A short list naming which companies are allowed to create the security padlock (SSL certificate) for your site.',
+    found:caa?'Only your named certificate providers can issue certificates for your domain.':'No CAA record, any certificate provider could issue a certificate for your domain.',
+    why:caa?'Stops a stranger obtaining a trusted certificate in your name.':'A recommended hardening step. Adding a CAA record prevents anyone obtaining a certificate in your name.',
+    fix:caa?null:'Add a CAA record listing the certificate provider you use.',e:caa?4:1,sev:'Low'});
+  if(d.reg&&(d.reg.registrar||d.reg.expiry)){
+    let st='info',short=d.reg.registrar||'See report',why='Good to know when your domain needs renewing.',fix=null,sev='Low',days=null;
+    if(d.reg.expiry){days=Math.round((new Date(d.reg.expiry).getTime()-Date.now())/86400000);
+      if(days<0){st='fail';short='Expired';why='If your domain has expired you can lose your website AND email, and someone else can grab the name.';fix='Renew immediately and turn on auto-renew.';sev='High';}
+      else if(days<60){st='warn';short=days+' days left';why='A missed renewal could cost you the domain, and your website and email with it.';fix='Turn on auto-renew with your registrar.';sev='Medium';}
+      else short=days+' days left';}
+    push({group:'web',name:'Domain registration & renewal',w:0,status:st,short:short,
+      attrs:[['Registrar',d.reg.registrar||'Unavailable'],['Renews',d.reg.expiry?d.reg.expiry.slice(0,10):'Unavailable']],
+      plain:'Who your domain is registered with, and when it needs renewing.',
+      found:(d.reg.registrar?'Registered with '+d.reg.registrar+'. ':'')+(d.reg.expiry?'Renews on '+d.reg.expiry.slice(0,10)+(days!=null?' ('+days+' days away)':'')+'.':''),
+      why:why,fix:fix,e:0,sev:sev});
+  }
+  push({group:'out',name:'Email provider',w:0,status:'info',short:d.emailProvider,plain:'The service that runs your email.',
+    found:d.mx.length?'Your email appears to run on '+d.emailProvider+'.':"No mail servers found, this domain isn't set up to receive email.",
+    why:'Helps tailor the right security recommendations.',e:0});
+  let spfStatus,spfShort,spfFound,spfWhy,spfFix,spfE,spfSev='Low';
+  if(!d.spf.found){spfStatus='fail';spfShort='Missing';spfFound='No SPF record was found.';
+    spfWhy="Right now, anyone can send email that looks like it's from your company, a favourite trick for fake-invoice fraud aimed at your customers and staff.";
+    spfFix='Publish an SPF record listing your email providers, ending in -all.';spfE=0;spfSev='High';}
+  else if(d.spf.insecure){spfStatus='fail';spfShort='Insecure (+all)';spfFound='Your SPF record ends in "+all".';
+    spfWhy='That setting actually lets ANYONE send email as your company, worse than having no record at all.';
+    spfFix='Change the ending to -all immediately.';spfE=2;spfSev='High';}
+  else if(d.spf.overLimit){spfStatus='warn';spfShort=d.spf.lookups+' lookups';
+    spfFound='Your SPF record needs '+d.spf.lookups+' lookups (the maximum allowed is 10).';
+    spfWhy='Going over the limit can break SPF entirely, causing your genuine emails to bounce or land in spam.';
+    spfFix='Simplify or "flatten" your SPF record to stay under 10 lookups.';spfE=9;spfSev='High';}
+  else if(d.spf.soft){spfStatus='pass';spfShort='Valid (soft)';spfFound='SPF is published and ends in "soft fail" (~all).';
+    spfWhy='Outsiders sending as you are flagged but not fully blocked. Good, and can be tightened.';
+    spfFix="Once you're sure all your senders are listed, tighten the ending to -all.";spfE=16;spfSev='Low';}
+  else{spfStatus='pass';spfShort='Valid';spfFound='SPF is published and locked down (-all).';
+    spfWhy="Outsiders can't easily send email pretending to be your company.";spfFix=null;spfE=20;}
+  push({group:'out',name:'Sender list (SPF)',w:20,status:spfStatus,short:spfShort,record:d.spf.found?d.spf.record:'',
+    attrs:d.spf.found?[['Ending mode',d.spf.mode],['DNS lookups',d.spf.lookups+' / 10']]:null,
+    plain:"A public list of who is allowed to send email using your company's name, like a guest list for your email.",
+    found:spfFound,why:spfWhy,fix:spfFix,e:spfE,sev:spfSev});
+  push({group:'out',name:'Tamper-proof seal (DKIM)',w:10,status:d.dkim.found?'pass':'fail',short:d.dkim.found?'Active':'Not found',
+    attrs:d.dkim.found?[['Selectors found',d.dkim.selectors.join(', ')]]:null,
+    plain:"A tamper-proof wax seal added to every email you send, proving it really came from you and wasn't altered on the way.",
+    found:d.dkim.found?'DKIM signing is active (keys found: '+d.dkim.selectors.join(', ')+').':'No DKIM signing keys were found at the common names we check.',
+    why:d.dkim.found?'Recipients can verify your emails are genuine and untampered.':"Your emails carry no digital seal, so they're easier to forge and more likely to be treated as spam.",
+    fix:d.dkim.found?null:"Turn on DKIM with your email provider and publish the key they give you. (We check common selectors; we'll confirm custom ones in a full review.)",e:d.dkim.found?10:0,sev:'High'});
+  let dmStatus,dmShort,dmFound,dmWhy,dmFix,dmE,dmSev='Low';
+  if(!d.dmarc.found){dmStatus='fail';dmShort='Missing';dmFound='No DMARC record was found.';
+    dmWhy="Without this rulebook, scammers can still impersonate your brand even if the checks above pass, and you'll never be told it's happening.";
+    dmFix='Publish a DMARC record. Start in "monitor" mode, then move to enforcement.';dmE=0;dmSev='High';}
+  else if(!d.dmarc.enforced){dmStatus='warn';dmShort='Monitor only';dmFound='DMARC is set to "monitor only" (p=none).';
+    dmWhy="It's watching for impersonation but not blocking it yet, so fake emails in your name can still get through.";
+    dmFix='Once your reports look clean, change the policy to quarantine, then reject.';dmE=12;dmSev='Medium';}
+  else{dmStatus='pass';dmShort='Enforcing ('+d.dmarc.policy+')';dmFound='DMARC is switched on and enforcing (policy: '+d.dmarc.policy+').';
+    dmWhy='Fake emails sent in your name get blocked or pushed to spam automatically.';
+    dmFix=d.dmarc.rua?null:'Add a reporting address (rua=) so you can see impersonation attempts.';dmE=22;}
+  push({group:'out',name:'Enforcement rulebook (DMARC)',w:22,status:dmStatus,short:dmShort,record:d.dmarc.found?d.dmarc.record:'',
+    attrs:d.dmarc.found?[['Policy',d.dmarc.policy],['Sub-domain policy',d.dmarc.sub||'(same as above)'],['Applies to',d.dmarc.pct+'% of mail'],['Reports to',d.dmarc.rua||'Nobody (no reports)']]:null,
+    plain:'The rulebook telling other email systems what to do with messages that fail the checks above, and it emails you a report of anyone trying to impersonate you.',
+    found:dmFound,why:dmWhy,fix:dmFix,e:dmE,sev:dmSev});
+  push({group:'out',name:'Verified logo in inbox (BIMI)',w:3,status:d.bimi.found?'pass':'info',short:d.bimi.found?'Set up':'Optional',record:d.bimi.found?d.bimi.record:'',
+    attrs:d.bimi.found?[['Logo',d.bimi.logo],['Verified logo cert',d.bimi.vmc]]:null,
+    plain:'Displays your verified company logo next to your emails in the inbox, like a blue tick for email.',
+    found:d.bimi.found?'A BIMI record is set up to show your logo.':'No BIMI record, an optional extra.',
+    why:d.bimi.found?'Your branding appears beside your emails in supporting inboxes, boosting trust.':'Nice-to-have once DMARC is fully enforced: lets your logo appear beside your emails and adds a trust signal.',
+    fix:d.bimi.found?null:'After DMARC is enforcing, add a BIMI record (optionally with a verified logo certificate).',e:d.bimi.found?3:0,sev:'Low'});
+  push({group:'in',name:'Email delivery (MX)',w:6,status:d.mx.length?'pass':'warn',short:d.mx.length?d.mx.length+' server'+(d.mx.length>1?'s':''):'None',
+    record:d.mx.map(m=>m.split(' ').slice(1).join(' ')||m).slice(0,3).join(', '),
+    plain:'The delivery address that tells the world where to drop off email for your domain.',
+    found:d.mx.length?'Email delivery is set up'+(d.mx.length>1?' with a backup server':'')+'.':'No mail servers are set up.',
+    why:d.mx.length?'You can send and receive email at this domain.':"This domain can't receive email. Fine if it's website-only, a problem if staff use email here.",
+    fix:d.mx.length?null:'If you need email here, set up mail servers with your email provider.',e:d.mx.length?6:3,sev:'Medium'});
+  push({group:'in',name:'Encrypted delivery (MTA-STS)',w:6,status:d.mtasts.found?'pass':'warn',short:d.mtasts.found?'On':'Not set',record:d.mtasts.found?d.mtasts.record:'',
+    plain:"Forces incoming email to arrive through a locked, encrypted tunnel, so it can't be secretly intercepted on the way to you.",
+    found:d.mtasts.found?'Incoming mail is required to use encryption.':'No MTA-STS policy is set up.',
+    why:d.mtasts.found?"Email to you can't be quietly downgraded to an unencrypted, snoopable connection.":'Email coming to you could be downgraded to an unencrypted connection and read in transit (a "man-in-the-middle" attack).',
+    fix:d.mtasts.found?null:'Publish an MTA-STS policy and host the small policy file.',e:d.mtasts.found?6:0,sev:'Medium'});
+  push({group:'in',name:'Delivery alerts (TLS-RPT)',w:4,status:d.tlsrpt.found?'pass':'info',short:d.tlsrpt.found?'On':'Not set',record:d.tlsrpt.found?d.tlsrpt.record:'',
+    plain:'Sends you a short daily report if any email arrived through an unlocked, unencrypted connection.',
+    found:d.tlsrpt.found?"You'll be notified of any insecure inbound email.":'No TLS-RPT record is set up.',
+    why:d.tlsrpt.found?'You get early warning of email-delivery or encryption problems.':'You currently have no visibility into whether incoming email is delivered securely.',
+    fix:d.tlsrpt.found?null:'Add a TLS-RPT record to start receiving encryption reports.',e:d.tlsrpt.found?4:0,sev:'Low'});
+  return C;
+}
+function scoreOf(checks){let e=0,p=0;checks.forEach(c=>{e+=c.e||0;p+=c.w||0;});
+  const pct=p?Math.round((e/p)*100):0;let g,color,word;
+  if(pct>=90){g='A';color='#22c55e';word='Excellent';}
+  else if(pct>=75){g='B';color='#4ade80';word='Good';}
+  else if(pct>=55){g='C';color='#f59e0b';word='Needs work';}
+  else if(pct>=35){g='D';color='#fb923c';word='At risk';}
+  else{g='F';color='#f43f5e';word='Exposed';}
+  return{pct,grade:g,color,word};}
+function plainSummary(pct){
+  if(pct>=90)return'Your domain is well protected. The essentials for stopping email scams and keeping your site online are all in place.';
+  if(pct>=75)return"You're in reasonable shape, but a few gaps leave room for email impersonation or downtime. The action plan below shows what to tighten.";
+  if(pct>=55)return'Several important protections are missing. Criminals could impersonate your business in email, and you have some avoidable risks. These are all fixable.';
+  return "Your domain is largely unprotected. It's currently easy for someone to send scam emails in your name, and you carry avoidable security and outage risks. The good news: every item below can be fixed.";}
+function planItemsOf(checks){const issues=checks.filter(c=>c.status==='fail'||c.status==='warn');const order={High:0,Medium:1,Low:2};
+  return issues.slice().sort((a,b)=>order[a.sev||'Low']-order[b.sev||'Low']);}
+function severityCounts(checks){const issues=checks.filter(c=>c.status==='fail'||c.status==='warn');
+  return{high:issues.filter(c=>c.sev==='High').length,medium:issues.filter(c=>c.sev==='Medium').length,low:issues.filter(c=>c.sev==='Low').length};}
+
+const PROG_MSGS=['Locating domain records…','Checking DNS routing…','Analyzing email provider settings…','Verifying SPF sender lists…','Checking DKIM digital signatures…','Evaluating DMARC enforcement policies…','Finalizing security assessment…'];
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+let progTimer=null;
+function startProgress(domain){
+  document.getElementById('scan-input-section').style.display='none';
+  document.getElementById('scan-results').style.display='none';
+  document.getElementById('scan-progress').style.display='block';
+  document.getElementById('progressDomain').textContent='Scanning '+domain;
+  const bar=document.getElementById('progressBar'),msg=document.getElementById('progressMsg');
+  let step=0;const total=60;
+  progTimer=setInterval(()=>{step++;const pct=Math.min(95,(step/total)*100);bar.style.width=pct+'%';
+    const idx=Math.floor((step/total)*PROG_MSGS.length);if(idx<PROG_MSGS.length)msg.textContent=PROG_MSGS[idx];},100);
+}
+function stopProgress(){if(progTimer){clearInterval(progTimer);progTimer=null;}document.getElementById('progressBar').style.width='100%';}
+function renderResults(domain,data,checks,score,plan,counts){
+  let h='';
+  h+='<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:30px">';
+  h+='<div><span class="eyebrow">Free security report for</span><h2 style="margin:14px 0 4px;font-size:clamp(1.7rem,3.4vw,2.4rem)">'+esc(domain)+'</h2>';
+  h+='<p class="muted" style="margin:0">Scanned '+data.date.toLocaleDateString()+' at '+data.date.toLocaleTimeString()+' · public DNS only</p></div>';
+  h+='<button class="btn btn-ghost btn-sm" id="rescanBtn">Scan another domain</button></div>';
+  h+='<div class="score-grid">';
+  h+='<div class="score-card" style="background:rgba('+(score.grade==="A"?"34,197,94":(score.grade==="B"||score.grade==="C")?"245,158,11":"244,63,94")+',.08);border-color:'+score.color+'">';
+  h+='<div class="grade" style="color:'+score.color+'">'+score.grade+'</div>';
+  h+='<div style="font-family:Space Grotesk,sans-serif;font-size:1.4rem;font-weight:600;margin-top:6px">'+score.word+'</div>';
+  h+='<div class="muted">'+score.pct+'% score</div></div>';
+  h+='<div class="card" style="display:flex;flex-direction:column"><h3 style="font-size:1.2rem">Summary</h3>';
+  h+='<p class="muted" style="font-size:1.05rem;line-height:1.6">'+plainSummary(score.pct)+'</p>';
+  h+='<div class="sev-pills"><span class="pill high">'+counts.high+' High priority</span><span class="pill med">'+counts.medium+' Medium</span><span class="pill low">'+counts.low+' Low</span></div></div></div>';
+  if(plan.length){
+    h+='<h2 style="font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:6px">Priority action plan</h2>';
+    h+='<p class="muted" style="margin-bottom:20px">The most important items to fix, ranked by severity.</p><div class="plan">';
+    plan.forEach(function(it){var cls=it.sev==='High'?'high':it.sev==='Medium'?'med':'low';
+      h+='<div class="plan-row"><div><span class="badge '+cls+'">'+it.sev+'</span></div><div><div style="font-family:Space Grotesk,sans-serif;font-weight:600">'+esc(it.name)+'</div>';
+      h+='<div style="margin:6px 0 4px">'+esc(it.fix||'')+'</div><div class="muted" style="font-size:.92rem">'+esc(it.why||'')+'</div></div></div>';});
+    h+='</div>';
+    h+='<div class="band" style="text-align:left;padding:30px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:46px">';
+    h+='<div><h3 style="margin:0 0 6px;font-size:1.3rem">'+(counts.high>0?'Want us to fix this?':'Want a second pair of eyes?')+'</h3><p class="muted" style="margin:0">ResolveCloud can lock down your email security and keep it that way.</p></div>';
+    h+='<button class="btn btn-primary" data-go="book">Book with Team</button></div>';
+  } else {
+    h+='<div class="card" style="text-align:center;background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.3);margin-bottom:40px"><h2 style="font-size:1.6rem">No issues found</h2><p class="muted" style="margin:0">Your domain passes all our public security checks. Want us to keep it that way? <a class="grad-text" data-go="book" style="font-weight:600;cursor:pointer">Book with Team</a>.</p></div>';
+  }
+  h+='<h2 style="font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:6px">Detailed findings</h2>';
+  h+='<p class="muted" style="margin-bottom:20px">A complete breakdown of your domain\'s public security posture.</p>';
+  GROUPS.forEach(function(group){
+    var gc=checks.filter(function(c){return c.group===group.key;});if(!gc.length)return;
+    h+='<div class="group"><div class="group-head"><h3>'+esc(group.title)+'</h3><p>'+esc(group.sub)+'</p></div>';
+    gc.forEach(function(c){
+      h+='<div class="check"><div class="check-top"><h4>'+esc(c.name)+'</h4><span class="badge '+c.status+'">'+esc(c.short)+'</span>';
+      if(c.sev&&(c.status==='fail'||c.status==='warn'))h+='<span class="badge '+(c.sev==='High'?'high':c.sev==='Medium'?'med':'low')+'">'+c.sev+' priority</span>';
+      h+='</div><p class="plain">'+esc(c.plain)+'</p><div class="check-detail"><div><h5>What we found</h5><p>'+esc(c.found)+'</p>';
+      if(c.record)h+='<div class="rec">'+esc(c.record)+'</div>';
+      if(c.attrs&&c.attrs.length){h+='<table class="kv">';c.attrs.forEach(function(kv){h+='<tr><td>'+esc(kv[0])+'</td><td>'+esc(kv[1])+'</td></tr>';});h+='</table>';}
+      h+='</div><div>';
+      if(c.why)h+='<h5>Why it matters</h5><p style="margin-bottom:14px">'+esc(c.why)+'</p>';
+      if(c.fix)h+='<h5>What to do</h5><div class="fix">'+esc(c.fix)+'</div>';
+      h+='</div></div></div>';
+    });
+    h+='</div>';
+  });
+  h+='<h2 style="font-size:clamp(1.5rem,3vw,2.1rem);margin:46px 0 20px">Glossary of terms</h2><div class="gloss">';
+  GLOSSARY.forEach(function(g){h+='<div><h4 style="font-size:1.05rem;margin-bottom:3px">'+esc(g[0])+'</h4><p class="muted" style="margin:0;font-size:.95rem">'+esc(g[1])+'</p></div>';});
+  h+='</div>';
+  h+='<p class="muted" style="font-size:.82rem;margin-top:36px;border-top:1px solid var(--line);padding-top:20px"><b>Disclaimer:</b> This free tool performs a passive scan of publicly available DNS records via Cloudflare and Google DNS-over-HTTPS, plus public RDAP. We do not log in to your systems, test passwords, or store your results. A high score indicates good basic hygiene but is not a guarantee against all cyber threats. For a comprehensive assessment, book a review with ResolveCloud.</p>';
+  var sec=document.getElementById('scan-results');sec.innerHTML=h;sec.style.display='block';
+  document.getElementById('scan-progress').style.display='none';
+  var rb=document.getElementById('rescanBtn');if(rb)rb.addEventListener('click',resetScan);
+}
+function resetScan(){
+  document.getElementById('scan-results').style.display='none';
+  document.getElementById('scan-progress').style.display='none';
+  document.getElementById('scan-input-section').style.display='block';
+  document.getElementById('domainInput').value='';
+  document.getElementById('scanError').style.display='none';
+}
+async function runScan(){
+  var raw=document.getElementById('domainInput').value;
+  var errEl=document.getElementById('scanError');errEl.style.display='none';
+  var domain=normalizeDomain(raw);
+  if(!domain||!domain.includes('.')){errEl.textContent='Please enter a valid domain (e.g. example.com)';errEl.style.display='block';return;}
+  startProgress(domain);
+  try{
+    var data=await scan(domain);
+    if(!data.resolved){stopProgress();resetScan();errEl.textContent='Domain not found. Please check the spelling and try again.';errEl.style.display='block';return;}
+    var checks=buildChecks(data);
+    renderResults(domain,data,checks,scoreOf(checks),planItemsOf(checks),severityCounts(checks));
+    stopProgress();
+  }catch(e){stopProgress();resetScan();errEl.textContent='An error occurred while scanning. Please try again.';errEl.style.display='block';}
+}
+document.getElementById('scanBtn').addEventListener('click',runScan);
+document.getElementById('domainInput').addEventListener('keydown',function(e){if(e.key==='Enter')runScan();});
+</script>
+</body>
+</html>
